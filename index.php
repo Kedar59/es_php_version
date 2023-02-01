@@ -1,5 +1,4 @@
 <?php
-
 ?>
 <html lang="en">
 <head>
@@ -10,48 +9,55 @@
 
 </head>
 <body>
+    <!-- --------------------Navbar------------------ -->
     <div class="nav">
-    <input type="checkbox" id="nav-check">
-    <div class="nav-header">
-        <div class="nav-title">
-        <!-- <img src="images/logo_blend.jpg" alt="logo"> -->
-        <a href="index.php" >Elite Solutions</a>
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                <!-- <img src="images/logo_blend.jpg" alt="logo">  -->
+                <a href="index.php" >Elite Solutions</a>
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+            </label>
+        </div>
+        <div class="nav-links">
+            <a href="solutions.php" target="_blank">Solutions</a>
+            <a href="request_problem.php" target="_blank">Request Problems</a>
+            <a href="contact_us.php">Contact us</a>
+            <a href="https://codepen.io/jo_Geek/" target="_blank">Login</a>
+            <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">Register</a>
         </div>
     </div>
-    <div class="nav-btn">
-        <label for="nav-check">
-        <span></span>
-        <span></span>
-        <span></span>
-        </label>
-    </div>
-    <div class="nav-links">
-        <a href="solutions.php" target="_blank">Solutions</a>
-        <a href="request_problem.php" target="_blank">Request Problems</a>
-        <a href="contact_us.php">Contact us</a>
-        <a href="https://codepen.io/jo_Geek/" target="_blank">Login</a>
-        <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">Register</a>
-    </div>
     <section id="title">
-        <h1 class"title-text">Your one stop solution <br>
+        <h1 class="title-text">Your one stop solution <br>
             to <span id="colored">Leetcode problems.</span></h1>
 
-        <p class"title-text">A dedicated platform for getting the most optimized and <br>handpicked solutions for Leetcode problems.</p>
+        <p class="title-text">A dedicated platform for getting the most optimized and <br>handpicked solutions for Leetcode problems.</p>
+        <!--------------------- Button----------------- -->
         <div class="pos-button">
         <button class="btn" >Create account</button>
         </div>
+        
+        <!---------------- Info text--------------------- -->
         <h3 class="title-text">Why use Elite Solutions?</h3>
         <h5 class="title-text">There are many websites that provide Leetcode <br>solutions, so what makes Elite Solutions stand out? <br>We will provide you with some salient features that <br>make Elite Solutions stand out!</h5>
-        <div class="card">
-            <div class="card-header">
-                <img src="" alt="background image">
-            </div>
+        
+        <!------------- Cardes section --------------------->
             
-            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-            <p><button>Add to Cart</button></p>
-        </div>
-    
+            <div class="aspect-ratio-container">
+                <div class="aspect-ratio-item">
+                    <div class="card">
+                        <img class="card-image" src="images/bgc2.png" />
+                        <button class="btn">Add to card!</button>
+                    </div>
+                </div>
+            </div>
+        
     </section>
-</div>
 </body>
 </html>
