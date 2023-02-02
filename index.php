@@ -1,6 +1,9 @@
 <?php
 ?>
 <html lang="en">
+<!-- My wamp is not working so 
+    I am editing in html file plz fix 
+    my wamp -->
 <head>
 <link rel="stylesheet" type="text/css" href="styles/home.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,18 +49,49 @@
         <!---------------- Info text--------------------- -->
         <h3 class="title-text">Why use Elite Solutions?</h3>
         <h5 class="title-text">There are many websites that provide Leetcode <br>solutions, so what makes Elite Solutions stand out? <br>We will provide you with some salient features that <br>make Elite Solutions stand out!</h5>
-        
-        <!------------- Cardes section --------------------->
             
-            <div class="aspect-ratio-container">
-                <div class="aspect-ratio-item">
-                    <div class="card">
-                        <img class="card-image" src="images/bgc2.png" />
-                        <button class="btn">Add to card!</button>
-                    </div>
-                </div>
+    </section>
+    <!------------- Cardes section --------------------->
+    <section id="features">
+
+    <div class="aspect-ratio-container">
+        <div class="aspect-ratio-item pos-left">
+            <div class="card">
+                <img class="card-image" src="images/bgc2.png"/>
+                <h4>Requesting Problems</h4>
+                <p>Stuck with a problem that is not on our<br>website? Just send us your problem and our<br>team will provide you with a solution!</p>
+                <button class="btn">Request<br>Problem=></button>
             </div>
-        
+        </div>
+        <!-- This is one card other 3 cards arent working position wise 
+             I mean they are all squished into one single place-->
+
+             
+        <!-- <div class="aspect-ratio-item pos-right">
+            <div class="card">
+                <img class="card-image" src="images/bgc2.png"/>
+                <h4>User Satisfaction</h4>
+                <p>We are constantly on lookout for<br>complains and suggestions. Feel free to<br>reach us!</p>
+                <button class="btn">Contact Us =></button>
+            </div>
+        </div>
+        <div class="aspect-ratio-item pos-left">
+            <div class="card">
+                <img class="card-image" src="images/bgc2.png"/>
+                <h4>Post your own solution</h4>
+                <p>Think your solution is more optimized<br>than ours? Feel free to send your solution<br>and it may be featured on our website!</p>
+                <button class="btn">Post your<br>solution > =></button>
+            </div>
+        </div>
+        <div class="aspect-ratio-item pos-right">
+            <div class="card">
+                <img class="card-image" src="images/bgc2.png"/>
+                <h4>Optimized Solutions</h4>
+                <p>With our solutions you will be rest assured<br>that you will be undetrstanding the most<br>optimal approach to the various problems.</p>
+                <button class="btn">Solutions =></button>
+            </div>
+        </div> -->
+    </div>
     </section>
 </body>
 </html>
