@@ -1,0 +1,7 @@
+CREATE TABLE user(
+    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username varchar(191),
+    email varchar(191),
+    password varchar(255),
+    UNIQUE (email)
+)
