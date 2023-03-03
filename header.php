@@ -1,4 +1,13 @@
 <?php
+    session_start();
+    $loggedin=false;
+    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=true)
+    {
+        $loggedin=true;
+    }
+    else{   
+        $loggedin=false;
+    }
 ?>
 <!DOCTYPE html>
     <head>
@@ -25,7 +34,14 @@
                     <li><a href="submit_solns.php">Submit Solutions</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="login_and_register.php">Login or register</a>
+            <?php
+                if($loggedin){
+                    echo'<a class="cta" href="logout.php"> Logout </a>';
+                }
+                else{
+                echo'<a class="cta" href="login_and_register.php">Login or register</a>';
+                }
+            ?>
             <p class="menu cta">Menu</p>
         </header>
         <div class="overlay">
@@ -35,7 +51,14 @@
                 <a href="request_problem.php">Request Problems</a>
                 <a href="contact_us.php">Contact us</a>
                 <a href="submit_solns.php">Submit Solutions</a>
-                <a class="cta" href="login_and_register.php">Login or Register</a>
+                <?php
+                if($loggedin){
+                    echo'<a class="cta" href="logout.php"> Logout </a>';
+                }
+                else{
+                echo'<a class="cta" href="login_and_register.php">Login or register</a>';
+                }
+                ?>
             </div>
         </div>
         <script type="text/javascript" src="javascript/mobile.js"></script>

@@ -1,3 +1,32 @@
+<?php
+$login=false;
+$showError=false;
+if(isset($_POST["sub"])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  include("trial.php");
+  $email = $_POST["u_email"];
+  $password = $_POST["password"];
+  
+  $sql = "SELECT * from user WHERE email='$email'";
+  $result = mysqli_query($con,$sql);
+  $num = mysqli_num_rows($result);
+  $res = mysqli_fetch_array($result);
+  if($num==1 && (password_verify($password,$res['password'])))
+  {
+    $login=true;
+    session_start();
+    $_SESSION['loggedin']=true;
+    $_SESSION['email']=$email;
+    
+    $_SESSION['username']=$res['username'];
+    header("location:index.php");
+  }
+  else{
+    $showError="Invalid Credentials";
+  }
+}
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,23 +39,43 @@
     <link rel="stylesheet" href="styles/login_and_register.css">
 </head>
 <body class="bg-dark">
+  <?php
+  if($login){
+    echo'
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Success</strong> You have logged in successfully
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+  }
+  if($showError){
+    echo'
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong> Failure </strong> '.$showError.'
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
+    }
+  ?>
   <div class="container">
     <div class="row mt-5">
       <div class="col-lg-4 bg-white m-auto rounded wrapper">
         <h2 class="text-center pt-3">Signup Now</h2>
         <p class="text-center text-muted lead">Its free and takes a minute</p>
         <!-- Form start -->
-        <form action="#">
+        <form action="login.php" method="post">
           <div class="input-groupc mb-3">
             <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-            <input type="email" class="form-control" placeholder="Email"/>
+            <input type="email" name="u_email" class="form-control" placeholder="Email"/>
           </div>
           <div class="input-groupc mb-3">
             <span class="input-group-text"><i class="fa fa-lock"></i></span>
-            <input type="password" class="form-control" placeholder="password"/>
+            <input type="password" name="password" class="form-control" placeholder="password"/>
           </div>
           <div class="d-grid mt-2">
-            <button type="button" class="btn btn-success">Signup Now</button>
+            <button type="submit" name="sub" class="btn btn-success"> Login </button>
             <p class="text-center mt-3">Don't have a account ? <a href="login_and_register.php">Register</a></p>
           </div>
         </form>
