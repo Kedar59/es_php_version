@@ -5,3 +5,39 @@ CREATE TABLE user(
     password varchar(255),
     UNIQUE (email)
 )
+CREATE TABLE questions(
+    ID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title varchar(191),
+    url varchar(191),
+    category varchar(191),
+    difficulty varchar(191),
+    languages varchar(191)
+)
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Est','Ipsam','Linked List','easy','Java');
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Qui','Natus','Linked List','medium','Java');
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Ut','Autem Sed','Hash map','easy','python');
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Maxime','Nulla','Hash map','easy','C++');
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Beatae et','Lure','Linked List','easy','Python');
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Soluta','Tempore','Arrays','medium','Python')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Labore','Quos','Arrays','hard','Python')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Sed aut','Aut in','Linked List','easy','Java')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Ratione','Similique','Arrays','easy','Java')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Voluptas','Sunt ex','Hash map','easy','Java')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Incidunt','Et non','Hash map','hard','Python')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Ipsam','Qui','Linked List','medium','C++')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Deserunt','Hic nemo','Arrays','medium','Python')
+INSERT INTO questions ( title, url, category, difficulty, languages)
+VALUES ('Ut quia','Fugiat','Linked List','easy','Python')
