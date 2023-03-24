@@ -42,7 +42,7 @@
                 if($result) {
                 // The row was successfully updated
                 echo "Row updated successfully";
-                $_SESSION['solved']++;
+                $_SESSION['solved']+=1;
                 } else {
                 // An error occurred while updating the row
                 echo "Error updating row: " . mysqli_error($con);

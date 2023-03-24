@@ -25,6 +25,13 @@
 				}
 				$res = mysqli_query($con,"SELECT * FROM questions");
 				$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
+				$res = mysqli_query($con, "SELECT title FROM questions_auth WHERE email = '$loggedin_user_email';");
+				$sol_qts = array();
+				if(mysqli_num_rows($res)>0){
+					foreach(mysqli_fetch_all($res,MYSQLI_ASSOC) as $q){
+						array_push($sol_qts,$q['title']);
+					}
+				}
 				mysqli_free_result($res);
 				mysqli_close($con);
 				if($loggedin ){ 
@@ -51,19 +58,8 @@
 						<td> <?php echo $row['title'] ?></td>	
 						<td><?php echo $row['category'] ?></td>	
 						<?php 
-						$timezone=date_default_timezone_set("Indian/Maldives");
-						$con=mysqli_connect("sql12.freemysqlhosting.net","sql12601988","7f2VEAbz6F","sql12601988");
-						if(mysqli_connect_errno()){
-							echo "failed to connect: " . mysqli_connect_errno();
-						}
-						$curr_title = $row['title'];
-						$sql = "SELECT COUNT(*) as count FROM questions_auth WHERE email='$loggedin_user_email' AND title='$curr_title'";
-						$result = mysqli_query($con, $sql);
-
-						$temp_row = mysqli_fetch_assoc($result);
-						$count = $temp_row['count'];
-						mysqli_close($con);
-						if($count>0) { ?>
+						
+						if(in_array($row['title'],$sol_qts,true)) { ?>
 							<td><i class="fas fa-check-square fa-2x"></i></td>
 						<?php } else { ?>
 							<td><i class="fa-regular fa-square fa-2x"></td>	
