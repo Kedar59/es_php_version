@@ -6,5 +6,9 @@
     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
     $extra = 'index.php';
     header("Location: http://$host$uri/$extra");
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 40ed7beaa4ad2ba047660a0036589a159d0206c9
     exit;
 ?>
