@@ -11,14 +11,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   $result = mysqli_query($con,$sql);
   $num = mysqli_num_rows($result);
   $res = mysqli_fetch_array($result);
+  
   if($num==1 && (password_verify($password,$res['password'])))
   {
     $login=true;
     session_start();
     $_SESSION['loggedin']=true;
     $_SESSION['email']=$email;
-    
+    $_SESSION['solved']=$res['solved'];
     $_SESSION['username']=$res['username'];
+    $_SESSION['id']=$res['ID'];
+    mysqli_close($con);
     header("location:index.php");
   }
   else{

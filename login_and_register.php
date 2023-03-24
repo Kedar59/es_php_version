@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "INSERT INTO user (username, email, password)
     VALUES ('$username','$email','$hash');";
     $result = mysqli_query($con,$sql);
+    
     if($result)
     {
       $showAlert=true;
@@ -37,6 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $showError = " Passwords don't match re-enter . ";
   }
 }
+mysqli_close($con);  
 }
 
 ?>

@@ -4,10 +4,12 @@
     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=true)
     {
         $loggedin=true;
+        $loggedin_user_email=$_SESSION['email'];
     }
     else{   
         $loggedin=false;
     }
+    
 ?>
 <!DOCTYPE html>
     <head>
