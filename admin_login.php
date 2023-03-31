@@ -1,33 +1,34 @@
 <?php
-$login=false;
-$showError=false;
-if(isset($_POST["sub"])){
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-  include("trial.php");
-  $email = $_POST["u_email"];
-  $password = $_POST["password"];
-  
-  $sql = "SELECT * from admin WHERE email='$email'";
-  $result = mysqli_query($con,$sql);
-  $num = mysqli_num_rows($result);
-  $res = mysqli_fetch_array($result);
-  
-  if($num==1 && $password==$res['password'])
-  {
-    $login=true;
     session_start();
-    $_SESSION['loggedin_admin']=true;
-    $_SESSION['email']=$email;
-    $_SESSION['username']=$res['username'];
-    $_SESSION['id']=$res['ID'];
-    mysqli_close($con);
-    header("location:index.php");
-  }
-  else{
-    $showError="Invalid Credentials";
-  }
-}
-}
+    $login=false;
+    $showError=false;
+    if(isset($_POST["sub"])){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+          include("trial.php");
+          $email = $_POST["u_email"];
+          $password = $_POST["password"];
+          
+          $sql = "SELECT * from admin WHERE email='$email'";
+          $result = mysqli_query($con,$sql);
+          $num = mysqli_num_rows($result);
+          $res = mysqli_fetch_array($result);
+          
+          if($num==1 && $password==$res['password'])
+          {
+            $login=true;
+            session_start();
+            $_SESSION['loggedin_admin']=true;
+            $_SESSION['email']=$email;
+            $_SESSION['username']=$res['username'];
+            $_SESSION['id']=$res['ID'];
+            mysqli_close($con);
+            header("location:index.php");
+          }
+          else{
+            $showError="Invalid Credentials";
+          }
+        }
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,13 +53,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>';
   }
   if($showError){
-    echo'
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong> Failure </strong> '.$showError.'
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true"></span>
+    echo"
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+      <strong> Failure </strong> $showError
+      <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'></span>
       </button>
-    </div>';
+    </div>";
     }
   ?>
   <div class="container">
@@ -67,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h2 class="text-center pt-3">Signup Now</h2>
         <p class="text-center text-muted lead">Its free and takes a minute</p>
         <!-- Form start -->
-        <form action="login.php" method="post">
+        <form action="admin_login.php" method="post">
           <div class="input-groupc mb-3">
             <span class="input-group-text"><i class="fa fa-envelope"></i></span>
             <input type="email" name="u_email" class="form-control" placeholder="Email"/>
