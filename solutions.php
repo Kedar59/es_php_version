@@ -25,13 +25,7 @@
 				}
 				$res = mysqli_query($con,"SELECT * FROM questions");
 				$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
-				$res = mysqli_query($con, "SELECT title FROM questions_auth WHERE email = '$loggedin_user_email';");
-				$sol_qts = array();
-				if(mysqli_num_rows($res)>0){
-					foreach(mysqli_fetch_all($res,MYSQLI_ASSOC) as $q){
-						array_push($sol_qts,$q['title']);
-					}
-				}
+				
 				mysqli_free_result($res);
 				mysqli_close($con);
 				if($loggedin ){ 
@@ -52,6 +46,20 @@
 						</td>	
 						</tr>
 						<?php } } else {
+						$timezone=date_default_timezone_set("Indian/Maldives");
+						$con=mysqli_connect("sql12.freemysqlhosting.net","sql12601988","7f2VEAbz6F","sql12601988");
+						if(mysqli_connect_errno()){
+							echo "failed to connect: " . mysqli_connect_errno();
+						}
+						$res = mysqli_query($con, "SELECT title FROM questions_auth WHERE email = '$loggedin_user_email';");
+						$sol_qts = array();
+						if(mysqli_num_rows($res)>0){
+							foreach(mysqli_fetch_all($res,MYSQLI_ASSOC) as $q){
+								array_push($sol_qts,$q['title']);
+							}
+						}
+						mysqli_free_result($res);
+						mysqli_close($con);
 						foreach($rows as $row) {?>
 						<tr>
 						<td><?php echo $row['ID'] ?></td>	
