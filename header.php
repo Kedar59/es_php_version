@@ -1,10 +1,18 @@
 <?php
     session_start();
     $loggedin=false;
+    $loggedin_admin=false;
     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=true)
     {
         $loggedin=true;
         $loggedin_user_email=$_SESSION['email'];
+        $uname=$_SESSION['username'];
+    }
+    else if(isset($_SESSION['loggedin_admin']) && $_SESSION['loggedin_admin']=true)
+    {
+        $loggedin_admin=true;
+        $loggedin_admin_email=$_SESSION['email'];
+        $admin_name=$_SESSION['username']."(admin)";
     }
     else{   
         $loggedin=false;
@@ -38,10 +46,16 @@
             </nav>
             <?php
                 if($loggedin){
-                    echo'<a class="cta" href="logout.php"> Logout </a>';
+                    echo"<h3>$uname</h3> <a class='cta' href='logout.php'> Logout </a>";
+                }
+                else if($loggedin_admin)
+                {
+                    echo"<h3>$admin_name</h3> <a class='cta' href='logout.php'> Logout </a>";
                 }
                 else{
-                echo'<a class="cta" href="login_and_register.php">Login or register</a>';
+                    echo'<a class="cta" href="login_and_register.php">Register</a>
+                    <a class="cta" href="login.php">Login</a>
+                    <a class="cta" href="admin_login.php">Admin login</a>';
                 }
             ?>
             <p class="menu cta">Menu</p>
@@ -55,10 +69,16 @@
                 <a href="submit_solns.php">Submit Solutions</a>
                 <?php
                 if($loggedin){
-                    echo'<a class="cta" href="logout.php"> Logout </a>';
+                    echo"<h3>$uname</h3> <a class='cta' href='logout.php'> Logout </a>";
+                }
+                else if($loggedin_admin)
+                {
+                    echo"<h3>$admin_name</h3> <a class='cta' href='logout.php'> Logout </a>";
                 }
                 else{
-                echo'<a class="cta" href="login_and_register.php">Login or register</a>';
+                    echo'<a class="cta" href="login_and_register.php">Register</a>
+                    <a class="cta" href="login.php">Login</a>
+                    <a class="cta" href="admin_login.php">Admin login</a>';
                 }
                 ?>
             </div>
