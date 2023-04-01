@@ -1,11 +1,11 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '9820042597',
+    host: 'sql12.freemysqlhosting.net',
+    user: 'sql12601988',
+    password: '7f2VEAbz6F',
     port:3306,
-    database:'Project'
+    database:'sql12601988'
   });
   
   connection.connect((error) => {
@@ -40,7 +40,7 @@ async function Call()
       let response = await fetchDailyCodingChallenge(iterator)
       if(response){
       
-      sql = `insert into questions(title,category,difficulty,description) values('${response.data.question.title}','${
+      sql = `insert into questions1(title,category,difficulty,description) values('${response.data.question.title}','${
         response.data.question.topicTags[response.data.question.topicTags.length-1].name}','${response.data.question.difficulty}','${response.data.question.content}')`
 
         connection.query(sql)
