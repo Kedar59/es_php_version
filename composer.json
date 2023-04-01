@@ -1,0 +1,17 @@
+{
+    "name": "arun/es_php_version",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arun\\EsPhpVersion\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NarutoUchiha39",
+            "email": "anirudhata123@gmail.com"
+        }
+    ]
+}
