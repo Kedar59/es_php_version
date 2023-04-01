@@ -1,0 +1,22 @@
+{
+  "name": "es_php_version",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kedar59/es_php_version.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kedar59/es_php_version/issues"
+  },
+  "homepage": "https://github.com/Kedar59/es_php_version#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
