@@ -11,7 +11,7 @@
 
   <p class="title-text">A dedicated platform for getting the most optimized and <br>handpicked solutions for Leetcode problems.</p>
   <div class="pos-button">
-  <button class="btn" style="margin-bottom:20%" onclick="location.href = '/signup' ">Create account</button>
+  <button class="btn" style="margin-bottom:20%" onclick="location.href = 'login_and_register.php';" >Create account</button>
   </div>
   <div class="Shapes">
   <div  class="Ellipse5"></div>
@@ -58,7 +58,7 @@
             <div class="card">
                 <img class="card-image" src="images/bgc2.jpg"/>
                 <h4>Requesting Problems</h4>
-                <button class="btn" onclick="location.href = '/RequestProblem'">Request<br>Problem</button>
+                <button class="btn" onclick="location.href = 'request_problem.php';">Request<br>Problem</button>
             </div>
             <p style="position: relative;float:right;color:white;right:15vh;top:-35vh">Stuck with a problem that is not on our<br>website? Just send us your problem and our<br>team will provide you with a solution!</p>
         </div>
@@ -70,7 +70,7 @@
             <div class="card">
                 <img class="card-image" src="images/bgc2.jpg"/>
                 <h4>User Satisfaction</h4>
-                <button class="btn" onclick="location.href='/ContactUs'">Contact Us =></button>
+                <button class="btn" onclick="location.href = 'contact_us.php';">Contact Us =></button>
             </div>
             <p style="position: relative;float:left;color:white;right:110vh;top:-35vh">We are constantly on lookout for<br>complains and suggestions. Feel free to<br>reach us!</p>
         </div>
@@ -81,7 +81,7 @@
             <div class="card" >
                 <img class="card-image" src="images/bcg3.jpg"/>
                 <h4>Post your own solution</h4>
-                <button class="btn" onclick="location.href = '/SendSolution' ">Post your<br>solution > =></button>
+                <button class="btn" onclick="location.href = 'submit_solns.php';">Post your<br>solution > =></button>
                 <p style="position: relative;float:right;color:white;left:105vh;top:-35vh">Think your solution is more optimized<br>than ours? Feel free to send your solution<br>and it may be featured on our website!</p>
             </div>
         </div>
@@ -91,7 +91,7 @@
             <div class="card">
                 <img class="card-image" src="images/bcg3.jpg"/>
                 <h4>Optimized Solutions</h4>
-                <button class="btn" onclick="location.href = '/solution' ">Solutions =></button>
+                <button class="btn" onclick="location.href = 'solutions.php';">Solutions =></button>
                 <p style="position: relative;float:left;color:white;left:-110vh;top:-35vh">With our solutions you will be rest assured<br>that you will be undetrstanding the most<br>optimal approach to the various problems.</p>
             </div>
         </div> 
