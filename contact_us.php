@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions</title>
+    <title>Contact us</title>
     <?php
     include("header.php");
+    include("mail.php");
+    if($_SERVER["REQUEST_METHOD"]=="POST")
+    {
+        $Name = $_POST["name"];
+        $Email = $_POST['email'];
+        $ProblemName = $_POST['ProblemName'];
+        $Link = $_POST['Link'];
+
+        $body = "Name : $Name"."<br><br>".
+                "Email : $Email"."<br><br>".
+                "Problem Name : $ProblemName"."<br><br>".
+                "Link : $Link";
+
+        SendMail("Request Problem",$body);
+
+    }
     ?>
     <link rel="stylesheet" href="styles/contact_us.css">
     
@@ -37,18 +53,21 @@
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-      <form action="#">
+      <form action="send.php" method="post">
         <div class="input-box">
-          <input type="text" placeholder="Enter your name">
+          <input type="text" name="Name" placeholder="Enter your name">
         </div>
         <div class="input-box">
-          <input type="email" placeholder="Enter your email">
+          <input type="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="input-box">
+          <input type="text" name="subject" placeholder="Enter your subject">
         </div>
         <div class="input-box message-box">
           <textarea name="meassage" placeholder="Enter yout message"></textarea>
         </div>
         <div class="button">
-          <input type="button" value="Send Now" >
+          <button type="submit" name="send"> Send </button>
         </div>
       </form>
     </div>
