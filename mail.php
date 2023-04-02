@@ -17,11 +17,11 @@ function SendMail($subject,$body)
         $mail->Username   = '';                     //SMTP username
         $mail->Password   = '';                               //SMTP password
         $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       ='';                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('prolaraveldevelopers@gmail.com', 'Mailer');
-        $mail->addAddress('anirudha.ta@somaiya.edu');     //Add a recipient
+        $mail->setFrom('', 'Elite Solutions3');
+        $mail->addAddress('');     //Add a recipient
 
 
 
