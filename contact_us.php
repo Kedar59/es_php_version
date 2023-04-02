@@ -52,7 +52,7 @@
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-      <form action="send.php" method="post">
+        <form method="post" class="form" action="contact_us.php">
         <div class="input-box">
           <input type="text" name="name" placeholder="Enter your name">
         </div>
