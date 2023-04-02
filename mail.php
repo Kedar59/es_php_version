@@ -1,38 +1,40 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-
-
-
-//Load Composer's autoloader
 require 'vendor/autoload.php';
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer\PHPMailer\PHPMailer();
-    $mail->IsSMTP(); 
+function SendMail($subject,$body)
+{
+    require 'vendor/autoload.php';
 
-    $mail->CharSet="UTF-8";
-    $mail->Host = "smtp.gmail.com";
-    $mail->SMTPDebug = 1; 
-    $mail->Port = 587 ; //465 or 587
+    //Create an instance; passing `true` enables exceptions
+    $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
 
-     $mail->SMTPSecure = 'tls';  
-    $mail->SMTPAuth = true; 
-    $mail->IsHTML(true);
+    try {
+        //Server settings
+        $mail->SMTPDebug = \PHPMailer\PHPMailer\SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'anirudhata123@gmail.com';                     //SMTP username
+        $mail->Password   = 'ddkharwmzkjvexqs';                               //SMTP password
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    //Authentication
-    $mail->Username = "prolaraveldevelopers@gmail.com";
-    $mail->Password = "ipukmunaakgghxee";
-
-    //Set Params
-    $mail->SetFrom("prolaraveldevelopers@gmail.com");
-    $mail->AddAddress("kedar.shidhaye@somaiya.edu");
-    $mail->Subject = "Test";
-    $mail->Body = "hello";
+        //Recipients
+        $mail->setFrom('prolaraveldevelopers@gmail.com', 'Mailer');
+        $mail->addAddress('anirudha.ta@somaiya.edu');     //Add a recipient
 
 
-     if(!$mail->Send()) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
-     } else {
-        echo "Message has been sent";
-     }
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = $subject;
+        $mail->Body    = $body;
+        
+
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (\PHPMailer\PHPMailer\Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+
+}
