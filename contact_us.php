@@ -12,15 +12,14 @@
     {
         $Name = $_POST["name"];
         $Email = $_POST['email'];
-        $ProblemName = $_POST['ProblemName'];
-        $Link = $_POST['Link'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
 
         $body = "Name : $Name"."<br><br>".
                 "Email : $Email"."<br><br>".
-                "Problem Name : $ProblemName"."<br><br>".
-                "Link : $Link";
+                "Message : $message";
 
-        SendMail("Request Problem",$body);
+        SendMail($subject,$body);
 
     }
     ?>
@@ -55,7 +54,7 @@
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
       <form action="send.php" method="post">
         <div class="input-box">
-          <input type="text" name="Name" placeholder="Enter your name">
+          <input type="text" name="name" placeholder="Enter your name">
         </div>
         <div class="input-box">
           <input type="email" name="email" placeholder="Enter your email">
@@ -64,7 +63,7 @@
           <input type="text" name="subject" placeholder="Enter your subject">
         </div>
         <div class="input-box message-box">
-          <textarea name="meassage" placeholder="Enter yout message"></textarea>
+          <textarea name="message" placeholder="Enter yout message"></textarea>
         </div>
         <div class="button">
           <button type="submit" name="send"> Send </button>
