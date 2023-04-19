@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+body{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#title
+{
+    font-size: 32px;
+}
+.Question
+{
+    margin-top: 25px;
+    margin-bottom: 90px;
+}
+pre{
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+code
+{
+    font-size: 15px;
+}
+
+.content
+{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.question
+{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.solution
+{
+    margin-top: 25px;
+    margin-left: 50px;
+}

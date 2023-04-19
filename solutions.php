@@ -39,9 +39,9 @@
 						<td><?php echo $row['difficulty'] ?></td>			
 						<td>
 							<div>
-								<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/python.png" alt="python" ></a>
-                				<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/java.png" alt="java"></a>
-                				<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp"></a>
+								<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=python"><img  src="images/python.png" alt="python" ></a>
+                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/java.png" alt="java"></a>
+                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp"></a>
 							</div>
 						</td>	
 						</tr>
@@ -75,9 +75,9 @@
 						<td><?php echo $row['difficulty'] ?></td>			
 						<td>
 							<div>
-								<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/python.png" alt="python" style="margin-right:30px" ></a>
-                				<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/java.png" alt="java" style="margin-right:30px"></a>
-                				<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp" style="margin-right:30px"></a>
+								<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=python"><img  src="images/python.png" alt="python" style="margin-right:30px" ></a>
+                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=java"><img  src="images/java.png" alt="java" style="margin-right:30px"></a>
+                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp" style="margin-right:30px"></a>
 							</div>
 						</td>	
 						</tr>
@@ -94,9 +94,9 @@
 						<td><?php echo $row['difficulty'] ?></td>			
 						<td>
 							<div>
-								<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/python.png" alt="python" ></a>
-                				<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/java.png" alt="java"></a>
-                				<a href="solutionPage.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp"></a>
+								<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=python"><img  src="images/python.png" alt="python" ></a>
+                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=java"><img  src="images/java.png" alt="java"></a>
+                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp"></a>
 							</div>
 						</td>	
 						</tr>
@@ -105,4 +105,4 @@
 	</table>
 	
 </body>
-</html>
+</html>																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
