@@ -29,7 +29,7 @@
     <div class="content">
         <div class="question">
         <?php
-            $res = $mysql->query("select description from questions where title = '$title'");
+            $res = $mysql->query("select description from questions1 where title = '$title'");
             $rows = $res->fetch_assoc();
             echo "<span id='title'>$title</span>";
             echo "<br><br>";
@@ -39,7 +39,15 @@
 
             echo "</div>";
             echo "<div  class= 'Question'>";
-            echo nl2br($rows["description"]);
+            if($rows["description"][0]!='<')
+            {
+                echo nl2br($rows["description"]);
+            }
+            else
+            {
+                echo $rows["description"];
+            }
+            
             echo "</div>";
         ?>
         </div>
