@@ -25,6 +25,13 @@
     <?php
         $title = urldecode($_GET['title']);
         $language = urldecode($_GET['language']);
+        $res1 = $mysql->query("SELECT * FROM questions_auth WHERE title='$title' AND email='$loggedin_user_email'");
+        $n_rows=$res1->num_rows;
+        if($n_rows==0){
+            $res2 = $mysql->query("INSERT INTO questions_auth (email,title) VALUES ('$loggedin_user_email','$title')");
+            $res3 = $mysql->query("UPDATE user SET solved = solved + 1 WHERE email='$loggedin_user_email'");
+            $_SESSION['solved']++;
+        }
     ?>
     <div class="content">
         <div class="question">

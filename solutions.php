@@ -30,6 +30,7 @@
 				mysqli_close($con);
 				if($loggedin ){ 
 					if($_SESSION['solved']==0) {
+						
 						foreach($rows as $row){  ?>
 						<tr>
 						<td><?php echo $row['id'] ?></td>	
@@ -41,7 +42,6 @@
 							<div>
 								<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=python"><img  src="images/python.png" alt="python" ></a>
                 				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/java.png" alt="java"></a>
-                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp"></a>
 							</div>
 						</td>	
 						</tr>
@@ -77,7 +77,6 @@
 							<div>
 								<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=python"><img  src="images/python.png" alt="python" style="margin-right:30px" ></a>
                 				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=java"><img  src="images/java.png" alt="java" style="margin-right:30px"></a>
-                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp" style="margin-right:30px"></a>
 							</div>
 						</td>	
 						</tr>
@@ -96,7 +95,6 @@
 							<div>
 								<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=python"><img  src="images/python.png" alt="python" ></a>
                 				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>&language=java"><img  src="images/java.png" alt="java"></a>
-                				<a href="SolutionsDisplay.php?title=<?php echo urlencode($row['title']); ?>"><img  src="images/cpp.png" alt="cpp"></a>
 							</div>
 						</td>	
 						</tr>
