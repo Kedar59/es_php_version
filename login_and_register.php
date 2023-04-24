@@ -82,19 +82,19 @@ mysqli_close($con);
         <!-- Form start -->
         <form action="login_and_register.php" method="post">
           <div class="input-groupc mb-3">
-            <span class="input-group-text"><i class="fa fa-user"></i>   Eg - "Doremon"</span>
+            <span class="input-group-text"><i class="fa fa-user"></i>   Eg - "Name"</span>
             <input type="text" name="u_name" class="form-control" placeholder="Name"/>
           </div>
           <div class="input-groupc mb-3">
-            <span class="input-group-text"><i class="fa fa-envelope"></i>   Eg - "assignment.bhej@dunga.com"</span>
+            <span class="input-group-text"><i class="fa fa-envelope"></i>   Eg - "name.sname@gmail.com"</span>
             <input type="email" name="u_email" class="form-control" placeholder="Email"/>
           </div>
           <div class="input-groupc mb-3">
-            <span class="input-group-text"><i class="fa fa-lock"></i>    Eg - "Cost20rs"</span>
+            <span class="input-group-text"><i class="fa fa-lock"></i>    Eg - "**********"</span>
             <input type="password" name="password" class="form-control" placeholder="password"/>
           </div>
           <div class="input-groupc mb-3">
-            <span class="input-group-text"><i class="fa fa-lock"></i>     Eg - "Cost20rs"</span>
+            <span class="input-group-text"><i class="fa fa-lock"></i>     Eg - "**********"</span>
             <input type="password" name="cpassword" class="form-control" placeholder="Confirmed password"/>
           </div>
           <div class="d-grid mt-2">
