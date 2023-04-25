@@ -8,12 +8,6 @@
         $loggedin_user_email=$_SESSION['email'];
         $uname=$_SESSION['username'];
     }
-    else if(isset($_SESSION['loggedin_admin']) && $_SESSION['loggedin_admin']=true)
-    {
-        $loggedin_admin=true;
-        $loggedin_admin_email=$_SESSION['email'];
-        $admin_name=$_SESSION['username']."(admin)";
-    }
     else{   
         $loggedin=false;
     }
@@ -54,8 +48,7 @@
                 }
                 else{
                     echo'<a class="cta" href="login_and_register.php">Register</a>
-                    <a class="cta" href="login.php">Login</a>
-                    <a class="cta" href="admin_login.php">Admin login</a>';
+                    <a class="cta" href="login.php">Login</a>';
                 }
             ?>
             <p class="menu cta">Menu</p>
@@ -76,9 +69,8 @@
                     echo"<h3>$admin_name</h3> <a class='cta' href='logout.php'> Logout </a>";
                 }
                 else{
-                    echo'<a class="cta" href="login_and_register.php">Register</a>
-                    <a class="cta" href="login.php">Login</a>
-                    <a class="cta" href="admin_login.php">Admin login</a>';
+                    echo'<a class="cta" href="login_and_register.php">Register</a>   
+                    <a class="cta" href="login.php">Login</a>';
                 }
                 ?>
             </div>
