@@ -40,11 +40,11 @@
             $rows = $res->fetch_assoc();
             echo "<span id='title'>$title</span>";
             echo "<br><br>";
-            echo "<div class='Popularity' style='display:flex'>";
-                echo "<i class='fa-regular fa-thumbs-up' id='likes' style='cursor:pointer;margin-right:10px;font-size:22px'></i>";
-                echo "<i class='fa-regular fa-thumbs-down' style='margin-left: 30px;cursor:pointer;color:white;margin: top 10px;font-size:22px' id='dislikes'></i>";
+            // echo "<div class='Popularity' style='display:flex'>";
+            //     echo "<i class='fa-regular fa-thumbs-up' id='likes' style='cursor:pointer;margin-right:10px;font-size:22px'></i>";
+            //     echo "<i class='fa-regular fa-thumbs-down' style='margin-left: 30px;cursor:pointer;color:white;margin: top 10px;font-size:22px' id='dislikes'></i>";
 
-            echo "</div>";
+            // echo "</div>";
             echo "<div  class= 'Question'>";
             if($rows["description"][0]!='<')
             {
