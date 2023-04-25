@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="container">
     <div class="row mt-5">
       <div class="col-lg-4 bg-white m-auto rounded wrapper">
-        <h2 class="text-center pt-3">Signup Now</h2>
+        <h2 class="text-center pt-3">Login page</h2>
         <p class="text-center text-muted lead">Its free and takes a minute</p>
         <!-- Form start -->
         <form action="login.php" method="post">
