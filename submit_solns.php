@@ -52,7 +52,7 @@
             <input type="text" placeholder="Enter problem name" required name="ProblemName" style="color:black"/>
           </div>
           <div class="input-box">
-            <label>Solution link Pastebin Link</label>
+            <label>Solution link of Pastebin</label>    <a href="https://pastebin.com/">Pastebin Link</a>
             <input type="text" placeholder="Enter problem link" required name="Link" style="color:black"/>
           </div>
         </div>
