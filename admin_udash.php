@@ -18,7 +18,6 @@
     
         // Get the result and store it in a PHP variable
         $totQts = $result->fetch_array()[0];
-        print_r($totQts);
         $res = $mysql->query("SELECT ID,username,email,solved FROM user");
         $table_data = array();
         if($res->num_rows>0){

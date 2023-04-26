@@ -17,11 +17,7 @@
     
         // Get the result and store it in a PHP variable
         $totUsers = $result->fetch_array()[0];
-        print_r($totUsers);
         $res = $mysql->query("SELECT id,title,difficulty,category,seen FROM questions1");
-        if ($res === false) {
-            die("Query failed: " . $mysql->error);
-        }
         $table_data = array();
         if($res->num_rows>0){
             foreach(mysqli_fetch_all($res,MYSQLI_ASSOC) as $row){
