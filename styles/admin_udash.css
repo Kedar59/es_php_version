@@ -13,6 +13,7 @@
 .content-table thead tr {
     background-color: #1F1D3D;
     color: #ffffff;
+    padding : 5px auto 5px auto;
     text-align: left;
     font-weight: bold;
 }
@@ -22,11 +23,13 @@
 }
 
 .content-table tbody tr {
+    
     border-bottom: 1px solid #dddddd;
 }
 .content-table tbody tr td{
     text-decoration: none;
     text-align: center;
+    padding : 5px auto 5px auto;
 }
 .content-table thead tr th{
     text-decoration: none;
